@@ -16,7 +16,7 @@
         <StackPanel VerticalAlignment="Center"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center">
-            <Grid Width="150" Margin="0,0,0,0" >
+            <Grid Width="150" Margin="0,0,0,0" Name="DeliveryClick" MouseDown="DeliveryClick_MouseDown">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="120"/>
                     <RowDefinition/>
@@ -30,7 +30,7 @@
                            TextAlignment="Center"/>
             </Grid>
 
-            <Grid Width="150" Margin="50,0,0,0">
+            <Grid Width="150" Margin="50,0,0,0" Name="MovingClick" MouseDown="MovingClick_MouseDown">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="120"/>
                     <RowDefinition/>
@@ -44,7 +44,7 @@
                            TextAlignment="Center"/>
             </Grid>
 
-            <Grid Width="150" Margin="50,0,0,0">
+            <Grid Width="150" Margin="50,0,0,0" MouseDown="Grid_MouseDown">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="120"/>
                     <RowDefinition/>

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShakirovTranspComp.OrderClasses;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ShakirovTranspComp
 {
@@ -23,6 +12,48 @@ namespace ShakirovTranspComp
         public MovingOrder()
         {
             InitializeComponent();
+
+            LoadersBox.IsEnabled = false;
+        }
+
+        private void NeedLoaders_Checked(object sender, RoutedEventArgs e)
+        {
+            LoadersBox.IsEnabled = true;
+        }
+
+        private void NeedLoaders_Unchecked(object sender, RoutedEventArgs e)
+        {
+            LoadersBox.IsEnabled = false;
+        }
+
+        private async void RequestButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ImportBox.Text != string.Empty && ExportBox.Text != string.Empty)
+            {
+                short? loaders = null;
+                byte? furniture;
+                byte? pack;
+
+                if (NeedFurniture.IsChecked == true) furniture = 1;
+                else furniture = 0;
+
+                if (NeedPack.IsChecked == true) pack = 1;
+                else pack = 0;
+
+                if (NeedLoaders.IsChecked == true && short.TryParse(LoadersBox.Text, out short loaderTest) == true)
+                {
+                    loaders = short.Parse(LoadersBox.Text);
+
+                    if (await RequestMaker.MakeMovingRequestAsync(ImportBox.Text, ExportBox.Text, loaders, furniture, pack)) MessageBox.Show("Заказ совершен");
+                    else MessageBox.Show("Что-то пошло не так");
+                }
+                else
+                {
+                    if (await RequestMaker.MakeMovingRequestAsync(ImportBox.Text, ExportBox.Text, loaders, furniture, pack)) MessageBox.Show("Заказ совершен");
+                    else MessageBox.Show("Что-то пошло не так");
+                }
+            }
+            else MessageBox.Show("Введите число в поле количества грузчиков");
         }
     }
 }

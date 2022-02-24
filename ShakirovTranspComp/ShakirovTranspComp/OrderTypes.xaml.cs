@@ -24,5 +24,20 @@ namespace ShakirovTranspComp
         {
             InitializeComponent();
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Manager.mainFrame.Navigate(new ArendOrder());
+        }
+
+        private void MovingClick_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Manager.mainFrame.Navigate(new MovingOrder());
+        }
+
+        private void DeliveryClick_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Manager.mainFrame.Navigate(new TranportationOrder());
+        }
     }
 }

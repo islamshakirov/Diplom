@@ -42,7 +42,8 @@
             <TextBox Grid.Row="0"
                      Grid.Column="1"
                      Width="140"
-                     Height="50"/>
+                     Height="50"
+                     Name="AmountBox"/>
 
             <CheckBox Grid.Row="1"
                       Margin="105,25,0,0"
@@ -51,7 +52,10 @@
                       Content="Грузчики"
                       FontSize="15"
                       FontWeight="Bold"
-                      Foreground="White">
+                      Foreground="White"
+                      Name="NeedLoaders"
+                      Checked="NeedLoaders_Checked"
+                      Unchecked="NeedLoaders_Unchecked">
                 <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
                 </CheckBox.LayoutTransform>
@@ -60,7 +64,8 @@
             <TextBox Grid.Row="1"
                      Grid.Column="1"
                      Width="140"
-                     Height="50"/>
+                     Height="50"
+                     Name="LoadersBox"/>
 
             <TextBlock Text="Категория"
                        TextWrapping="Wrap"
@@ -74,7 +79,9 @@
             <ComboBox Grid.Row="2"
                      Grid.Column="1"
                      Width="140"
-                     Height="50"/>
+                     Height="50"
+                      Name="CargoTypeSelector"
+                      SelectedIndex="0"/>
 
             <Button Content="Заказать"
                     Width="250"
@@ -86,7 +93,9 @@
                     Foreground="White"
                     FontFamily="Times New Roman"
                     Grid.Row="3"
-                    Grid.ColumnSpan="2"/>
+                    Grid.ColumnSpan="2"
+                    Name="RequestButton"
+                    Click="RequestButton_Click"/>
 
         </Grid>
 
@@ -121,7 +130,8 @@
             <TextBox Grid.Row="1"
                      Grid.Column="1"
                      Height="50"
-                     Width="250"/>
+                     Width="250"
+                     Name="ImportBox"/>
 
 
             <Image Grid.Row="3"
@@ -141,7 +151,8 @@
             <TextBox Grid.Row="3"
                      Grid.Column="1"
                      Height="50"
-                     Width="250"/>
+                     Width="250"
+                     Name="ExportBox"/>
             
         </Grid>
        

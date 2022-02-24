@@ -8,19 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/calendar.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/house.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/mark.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/8786.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/boxes.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/car.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/checkmark.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/clock.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/clock1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/distance.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/weight.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/whiteback1.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/whiteback2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%d1%84%d0%be%d0%bd1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.tt")]
 
 

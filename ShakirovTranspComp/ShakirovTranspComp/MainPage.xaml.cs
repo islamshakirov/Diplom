@@ -24,5 +24,20 @@ namespace ShakirovTranspComp
         {
             InitializeComponent();
         }
+
+        private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.mainFrame.Navigate(new OrderTypes());
+        }
+
+        private void Why_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void CarsButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

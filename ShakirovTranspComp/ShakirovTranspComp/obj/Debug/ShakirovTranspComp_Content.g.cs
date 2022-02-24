@@ -8,16 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/0f7c06b9c3465243ca7a8b3c1a1670b1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/25694.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/8168.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/8786.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/960748-200.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/checkmark.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/clock.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/clock1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/distance.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/weight.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/%d1%84%d0%be%d0%bd2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.tt")]
 
 

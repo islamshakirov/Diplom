@@ -14,24 +14,13 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="170"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="70"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <Button Content="&lt;"
-                    Width="60"
-                    Height="40"
-                    Margin="5,20,0,0"
-                    FontSize="20"
-                    FontWeight="Bold"
-                    Foreground="White"
-                    Style="{StaticResource RoundButton}"
-                    Background="#508ca3"
-                VerticalAlignment="Top"/>
 
         <TextBlock Text="Грузоперевозки по России" 
                    FontSize="45"
@@ -60,7 +49,7 @@
                            TextAlignment="Center"/>
             </Grid>
 
-            <Grid Width="100" Margin="50,0,0,0">
+            <Grid Width="120" Margin="50,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
                     <RowDefinition/>
@@ -96,7 +85,9 @@
                     >
             <Image Width="60" Height="60"
                    Margin="0,0,50,0"
-                   Source="./images/car.png"/>
+                   Source="./images/car.png"
+                   Name="CarsButton"
+                   MouseDown="CarsButton_MouseDown"/>
             
             <Button Content="Сделать заказ"
                     Width="200"
@@ -105,12 +96,16 @@
                     FontWeight="Bold"
                     Background="#ff5a30"
                     Foreground="White"
-                    FontFamily="Times New Roman"/>
+                    FontFamily="Times New Roman"
+                    Name="OrderButton"
+                    Click="OrderButton_Click"/>
 
             <TextBlock Text="?" FontSize="45" Margin="50,0,0,10"
                        Height="50" Width="50" TextAlignment="Center"
                        FontWeight="Bold"
-                       Foreground="#ff5a30"/>
+                       Foreground="#ff5a30"
+                       Name="Why"
+                       MouseDown="Why_MouseDown"/>
         </StackPanel>
 
     </Grid>
