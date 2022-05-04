@@ -14,7 +14,6 @@ namespace ShakirovTranspComp
             InitializeComponent();
             Manager.MainWindow = this;
             Manager.mainFrame = MainFrame;
-            MainFrame.Navigate(new MainPage());
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

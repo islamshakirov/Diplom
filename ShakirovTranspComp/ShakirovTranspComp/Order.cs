@@ -17,7 +17,7 @@ namespace ShakirovTranspComp
         public int id { get; set; }
         public System.DateTime date { get; set; }
         public int price { get; set; }
-        public string car { get; set; }
+        public int car { get; set; }
         public int user { get; set; }
     
         public virtual Arend Arend { get; set; }

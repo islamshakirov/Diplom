@@ -25,6 +25,7 @@ namespace ShakirovTranspComp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transport> Transport { get; set; }
+
         public override string ToString()
         {
             return name;

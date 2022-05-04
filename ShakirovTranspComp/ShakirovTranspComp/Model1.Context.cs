@@ -15,10 +15,10 @@ namespace ShakirovTranspComp
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class cargo_trEntities : DbContext
+    public partial class cargotEntities : DbContext
     {
-        public cargo_trEntities()
-            : base("name=cargo_trEntities")
+        public cargotEntities()
+            : base("name=cargotEntities")
         {
         }
     

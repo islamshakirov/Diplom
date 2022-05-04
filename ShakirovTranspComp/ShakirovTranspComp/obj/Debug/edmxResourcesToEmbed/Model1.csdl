@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="cargo_transportationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="cargotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Admins">
     <Key>
       <PropertyRef Name="id" />
@@ -70,7 +70,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="price" Type="Int32" Nullable="false" />
-    <Property Name="car" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="car" Type="Int32" Nullable="false" />
     <Property Name="user" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Arend" Relationship="Self.FK_Arend_Order" FromRole="Order" ToRole="Arend" />
     <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
@@ -90,15 +90,16 @@
   </EntityType>
   <EntityType Name="Transport">
     <Key>
-      <PropertyRef Name="StateNum" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="StateNum" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StateNum" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="automodel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="fuel" Type="Int32" Nullable="false" />
     <Property Name="capacity" Type="Int32" Nullable="false" />
     <Property Name="length" Type="Int32" Nullable="false" />
     <Property Name="busy" Type="Byte" Nullable="false" />
     <Property Name="kind" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="CarType" Relationship="Self.FK_Transport_CarType" FromRole="Transport" ToRole="CarType" />
     <NavigationProperty Name="Order" Relationship="Self.FK_Order_Transport" FromRole="Transport" ToRole="Order" />
   </EntityType>
@@ -275,7 +276,7 @@
     <End Role="Order" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Transport">
-        <PropertyRef Name="StateNum" />
+        <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="Order">
         <PropertyRef Name="car" />
@@ -294,7 +295,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="cargo_trEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="cargotEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admins" />
     <EntitySet Name="Arend" EntityType="Self.Arend" />
     <EntitySet Name="cargoType" EntityType="Self.cargoType" />
@@ -374,11 +375,11 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(cargo_transportationModel.sp_helpdiagramdefinition_Result)">
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(cargotModel.sp_helpdiagramdefinition_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(cargo_transportationModel.sp_helpdiagrams_Result)">
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(cargotModel.sp_helpdiagrams_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>

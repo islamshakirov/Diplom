@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dns\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\
 ShakirovTranspComp
 none
 false
 DEBUG;TRACE
-C:\Users\dns\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\App.xaml
-91471114962
-21750853300
-44860519285
-192003359921
-ArendOrder.xaml;Auth.xaml;AuthPage.xaml;MainPage.xaml;MainWindow.xaml;MovingOrder.xaml;OrderTypes.xaml;RegPage.xaml;TranportationOrder.xaml;
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\App.xaml
+121628788290
+2-1957146511
+47912258083
+19941267590
+AdminsPage.xaml;ArendOrder.xaml;Auth.xaml;AuthPage.xaml;AutoManagment.xaml;DriversManagment.xaml;MainPage.xaml;MainWindow.xaml;MovingOrder.xaml;OrderTypes.xaml;RegPage.xaml;TranportationOrder.xaml;
 
-False
+True
 

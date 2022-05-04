@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Хранилище cargo_transportationModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Хранилище cargotModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Admins">
     <Key>
       <PropertyRef Name="id" />
@@ -59,7 +59,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="date" Type="date" Nullable="false" />
     <Property Name="price" Type="int" Nullable="false" />
-    <Property Name="car" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="car" Type="int" Nullable="false" />
     <Property Name="user" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
@@ -74,15 +74,16 @@
   </EntityType>
   <EntityType Name="Transport">
     <Key>
-      <PropertyRef Name="StateNum" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="StateNum" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="StateNum" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="automodel" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="fuel" Type="int" Nullable="false" />
     <Property Name="capacity" Type="int" Nullable="false" />
     <Property Name="length" Type="int" Nullable="false" />
     <Property Name="busy" Type="tinyint" Nullable="false" />
     <Property Name="kind" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Transportation">
     <Key>
@@ -219,7 +220,7 @@
     <End Role="Order" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Transport">
-        <PropertyRef Name="StateNum" />
+        <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="Order">
         <PropertyRef Name="car" />
@@ -307,7 +308,7 @@
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="TotalSum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <EntityContainer Name="Хранилище cargo_transportationModelContainer">
+  <EntityContainer Name="Хранилище cargotModelContainer">
     <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Arend" EntityType="Self.Arend" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="cargoType" EntityType="Self.cargoType" Schema="dbo" store:Type="Tables" />

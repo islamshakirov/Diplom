@@ -5,16 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShakirovTranspComp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="700"
+        Title="MainWindow" MinHeight="500" MinWidth="600" Height="550" Width="800"
         WindowStyle="None"
-        ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Background="#508ca3">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Frame Name="MainFrame" Grid.Row="0"
-               Grid.RowSpan="2" NavigationUIVisibility="Hidden"/>
+        <Frame Name="MainFrame" 
+               Grid.Row="1"
+               Grid.RowSpan="2" 
+               NavigationUIVisibility="Hidden"
+               Margin="0,10,0,0"/>
+        
         <Button Content="X"
                 Width="40"
                 Height="40"
@@ -27,6 +32,7 @@
                 Margin="0,20,10,0"
                 Style="{StaticResource RoundButton}"
                 Click="CloseButton_Click"/>
+        
         <Button Content="&lt;"
                     Name="BackButton"
                     Width="60"

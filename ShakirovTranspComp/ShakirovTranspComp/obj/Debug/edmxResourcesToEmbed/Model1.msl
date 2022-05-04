@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище cargo_transportationModelContainer" CdmEntityContainer="cargo_trEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище cargotModelContainer" CdmEntityContainer="cargotEntities">
     <EntitySetMapping Name="Admins">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Admins">
+      <EntityTypeMapping TypeName="cargotModel.Admins">
         <MappingFragment StoreEntitySet="Admins">
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Arend">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Arend">
+      <EntityTypeMapping TypeName="cargotModel.Arend">
         <MappingFragment StoreEntitySet="Arend">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="start" ColumnName="start" />
@@ -18,7 +18,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="cargoType">
-      <EntityTypeMapping TypeName="cargo_transportationModel.cargoType">
+      <EntityTypeMapping TypeName="cargotModel.cargoType">
         <MappingFragment StoreEntitySet="cargoType">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -26,7 +26,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CarType">
-      <EntityTypeMapping TypeName="cargo_transportationModel.CarType">
+      <EntityTypeMapping TypeName="cargotModel.CarType">
         <MappingFragment StoreEntitySet="CarType">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -34,21 +34,21 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Client">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Client">
+      <EntityTypeMapping TypeName="cargotModel.Client">
         <MappingFragment StoreEntitySet="Client">
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Drivers">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Drivers">
+      <EntityTypeMapping TypeName="cargotModel.Drivers">
         <MappingFragment StoreEntitySet="Drivers">
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Moving">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Moving">
+      <EntityTypeMapping TypeName="cargotModel.Moving">
         <MappingFragment StoreEntitySet="Moving">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="import" ColumnName="import" />
@@ -61,7 +61,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Order">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Order">
+      <EntityTypeMapping TypeName="cargotModel.Order">
         <MappingFragment StoreEntitySet="Order">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="date" ColumnName="date" />
@@ -72,7 +72,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="cargo_transportationModel.sysdiagrams">
+      <EntityTypeMapping TypeName="cargotModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -83,7 +83,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Transport">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Transport">
+      <EntityTypeMapping TypeName="cargotModel.Transport">
         <MappingFragment StoreEntitySet="Transport">
           <ScalarProperty Name="StateNum" ColumnName="StateNum" />
           <ScalarProperty Name="automodel" ColumnName="automodel" />
@@ -92,11 +92,12 @@
           <ScalarProperty Name="length" ColumnName="length" />
           <ScalarProperty Name="busy" ColumnName="busy" />
           <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Transportation">
-      <EntityTypeMapping TypeName="cargo_transportationModel.Transportation">
+      <EntityTypeMapping TypeName="cargotModel.Transportation">
         <MappingFragment StoreEntitySet="Transportation">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="import" ColumnName="import" />
@@ -109,7 +110,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="User">
-      <EntityTypeMapping TypeName="cargo_transportationModel.User">
+      <EntityTypeMapping TypeName="cargotModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="fio" ColumnName="fio" />
@@ -119,7 +120,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CarsKind">
-      <EntityTypeMapping TypeName="cargo_transportationModel.CarsKind">
+      <EntityTypeMapping TypeName="cargotModel.CarsKind">
         <MappingFragment StoreEntitySet="CarsKind">
           <ScalarProperty Name="CarNumber" ColumnName="CarNumber" />
           <ScalarProperty Name="Type" ColumnName="Type" />
@@ -127,7 +128,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UsersOrders">
-      <EntityTypeMapping TypeName="cargo_transportationModel.UsersOrders">
+      <EntityTypeMapping TypeName="cargotModel.UsersOrders">
         <MappingFragment StoreEntitySet="UsersOrders">
           <ScalarProperty Name="UserFIO" ColumnName="UserFIO" />
           <ScalarProperty Name="Contact" ColumnName="Contact" />
@@ -137,21 +138,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="ResetAllCars" FunctionName="Хранилище cargo_transportationModel.ResetAllCars" />
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище cargo_transportationModel.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище cargo_transportationModel.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище cargo_transportationModel.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище cargo_transportationModel.sp_helpdiagramdefinition">
+    <FunctionImportMapping FunctionImportName="ResetAllCars" FunctionName="Хранилище cargotModel.ResetAllCars" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище cargotModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище cargotModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище cargotModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище cargotModel.sp_helpdiagramdefinition">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="cargo_transportationModel.sp_helpdiagramdefinition_Result">
+        <ComplexTypeMapping TypeName="cargotModel.sp_helpdiagramdefinition_Result">
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище cargo_transportationModel.sp_helpdiagrams">
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище cargotModel.sp_helpdiagrams">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="cargo_transportationModel.sp_helpdiagrams_Result">
+        <ComplexTypeMapping TypeName="cargotModel.sp_helpdiagrams_Result">
           <ScalarProperty Name="Database" ColumnName="Database" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -160,8 +161,8 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище cargo_transportationModel.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище cargo_transportationModel.sp_upgraddiagrams" />
-    <FunctionImportMapping FunctionImportName="TotalSum" FunctionName="Хранилище cargo_transportationModel.TotalSum" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище cargotModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище cargotModel.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="TotalSum" FunctionName="Хранилище cargotModel.TotalSum" />
   </EntityContainerMapping>
 </Mapping>

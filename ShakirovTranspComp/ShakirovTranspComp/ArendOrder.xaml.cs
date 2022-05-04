@@ -45,7 +45,7 @@ namespace ShakirovTranspComp
             if (int.TryParse(AmountBox.Text, out int amount) == true)
             {
                 Transport suitCar = await DataBase.FindSuitCar(amount, (CarType)CarTypeSelector.SelectedItem);
-                if (suitCar != null) SuitableCars.Text = "Есть машина с тоннажем" + suitCar.capacity;
+                if (suitCar != null) SuitableCars.Text = "Есть машина с тоннажем " + suitCar.capacity;
                 else SuitableCars.Text = "Подходящих машин нет";
             }
             else MessageBox.Show("Введите число в поле тоннажа");

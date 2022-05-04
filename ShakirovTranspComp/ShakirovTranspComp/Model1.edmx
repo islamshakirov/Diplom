@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище cargo_transportationModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище cargotModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="id" />
@@ -64,7 +64,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
-          <Property Name="car" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="car" Type="int" Nullable="false" />
           <Property Name="user" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -79,15 +79,16 @@
         </EntityType>
         <EntityType Name="Transport">
           <Key>
-            <PropertyRef Name="StateNum" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="StateNum" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="StateNum" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="automodel" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="fuel" Type="int" Nullable="false" />
           <Property Name="capacity" Type="int" Nullable="false" />
           <Property Name="length" Type="int" Nullable="false" />
           <Property Name="busy" Type="tinyint" Nullable="false" />
           <Property Name="kind" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Transportation">
           <Key>
@@ -224,7 +225,7 @@
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Transport">
-              <PropertyRef Name="StateNum" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="car" />
@@ -312,7 +313,7 @@
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="TotalSum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="Хранилище cargo_transportationModelContainer">
+        <EntityContainer Name="Хранилище cargotModelContainer">
           <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Arend" EntityType="Self.Arend" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cargoType" EntityType="Self.cargoType" Schema="dbo" store:Type="Tables" />
@@ -393,7 +394,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="cargo_transportationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="cargotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="id" />
@@ -464,7 +465,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="price" Type="Int32" Nullable="false" />
-          <Property Name="car" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="car" Type="Int32" Nullable="false" />
           <Property Name="user" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Arend" Relationship="Self.FK_Arend_Order" FromRole="Order" ToRole="Arend" />
           <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
@@ -484,15 +485,16 @@
         </EntityType>
         <EntityType Name="Transport">
           <Key>
-            <PropertyRef Name="StateNum" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="StateNum" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StateNum" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="automodel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="fuel" Type="Int32" Nullable="false" />
           <Property Name="capacity" Type="Int32" Nullable="false" />
           <Property Name="length" Type="Int32" Nullable="false" />
           <Property Name="busy" Type="Byte" Nullable="false" />
           <Property Name="kind" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="CarType" Relationship="Self.FK_Transport_CarType" FromRole="Transport" ToRole="CarType" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Transport" FromRole="Transport" ToRole="Order" />
         </EntityType>
@@ -669,7 +671,7 @@
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Transport">
-              <PropertyRef Name="StateNum" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="car" />
@@ -688,7 +690,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="cargo_trEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="cargotEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admins" />
           <EntitySet Name="Arend" EntityType="Self.Arend" />
           <EntitySet Name="cargoType" EntityType="Self.cargoType" />
@@ -768,11 +770,11 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(cargo_transportationModel.sp_helpdiagramdefinition_Result)">
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(cargotModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(cargo_transportationModel.sp_helpdiagrams_Result)">
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(cargotModel.sp_helpdiagrams_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -800,16 +802,16 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище cargo_transportationModelContainer" CdmEntityContainer="cargo_trEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище cargotModelContainer" CdmEntityContainer="cargotEntities">
           <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Admins">
+            <EntityTypeMapping TypeName="cargotModel.Admins">
               <MappingFragment StoreEntitySet="Admins">
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Arend">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Arend">
+            <EntityTypeMapping TypeName="cargotModel.Arend">
               <MappingFragment StoreEntitySet="Arend">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="start" ColumnName="start" />
@@ -818,7 +820,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cargoType">
-            <EntityTypeMapping TypeName="cargo_transportationModel.cargoType">
+            <EntityTypeMapping TypeName="cargotModel.cargoType">
               <MappingFragment StoreEntitySet="cargoType">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -826,7 +828,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CarType">
-            <EntityTypeMapping TypeName="cargo_transportationModel.CarType">
+            <EntityTypeMapping TypeName="cargotModel.CarType">
               <MappingFragment StoreEntitySet="CarType">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -834,21 +836,21 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Client">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Client">
+            <EntityTypeMapping TypeName="cargotModel.Client">
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Drivers">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Drivers">
+            <EntityTypeMapping TypeName="cargotModel.Drivers">
               <MappingFragment StoreEntitySet="Drivers">
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Moving">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Moving">
+            <EntityTypeMapping TypeName="cargotModel.Moving">
               <MappingFragment StoreEntitySet="Moving">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="import" ColumnName="import" />
@@ -861,7 +863,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Order">
+            <EntityTypeMapping TypeName="cargotModel.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="date" ColumnName="date" />
@@ -872,7 +874,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="cargo_transportationModel.sysdiagrams">
+            <EntityTypeMapping TypeName="cargotModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -883,7 +885,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transport">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Transport">
+            <EntityTypeMapping TypeName="cargotModel.Transport">
               <MappingFragment StoreEntitySet="Transport">
                 <ScalarProperty Name="StateNum" ColumnName="StateNum" />
                 <ScalarProperty Name="automodel" ColumnName="automodel" />
@@ -892,11 +894,12 @@
                 <ScalarProperty Name="length" ColumnName="length" />
                 <ScalarProperty Name="busy" ColumnName="busy" />
                 <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transportation">
-            <EntityTypeMapping TypeName="cargo_transportationModel.Transportation">
+            <EntityTypeMapping TypeName="cargotModel.Transportation">
               <MappingFragment StoreEntitySet="Transportation">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="import" ColumnName="import" />
@@ -909,7 +912,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="cargo_transportationModel.User">
+            <EntityTypeMapping TypeName="cargotModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
@@ -919,7 +922,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CarsKind">
-            <EntityTypeMapping TypeName="cargo_transportationModel.CarsKind">
+            <EntityTypeMapping TypeName="cargotModel.CarsKind">
               <MappingFragment StoreEntitySet="CarsKind">
                 <ScalarProperty Name="CarNumber" ColumnName="CarNumber" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
@@ -927,7 +930,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UsersOrders">
-            <EntityTypeMapping TypeName="cargo_transportationModel.UsersOrders">
+            <EntityTypeMapping TypeName="cargotModel.UsersOrders">
               <MappingFragment StoreEntitySet="UsersOrders">
                 <ScalarProperty Name="UserFIO" ColumnName="UserFIO" />
                 <ScalarProperty Name="Contact" ColumnName="Contact" />
@@ -937,21 +940,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="ResetAllCars" FunctionName="Хранилище cargo_transportationModel.ResetAllCars" />
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище cargo_transportationModel.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище cargo_transportationModel.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище cargo_transportationModel.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище cargo_transportationModel.sp_helpdiagramdefinition">
+          <FunctionImportMapping FunctionImportName="ResetAllCars" FunctionName="Хранилище cargotModel.ResetAllCars" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище cargotModel.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище cargotModel.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище cargotModel.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище cargotModel.sp_helpdiagramdefinition">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="cargo_transportationModel.sp_helpdiagramdefinition_Result">
+              <ComplexTypeMapping TypeName="cargotModel.sp_helpdiagramdefinition_Result">
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище cargo_transportationModel.sp_helpdiagrams">
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище cargotModel.sp_helpdiagrams">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="cargo_transportationModel.sp_helpdiagrams_Result">
+              <ComplexTypeMapping TypeName="cargotModel.sp_helpdiagrams_Result">
                 <ScalarProperty Name="Database" ColumnName="Database" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -960,9 +963,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище cargo_transportationModel.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище cargo_transportationModel.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="TotalSum" FunctionName="Хранилище cargo_transportationModel.TotalSum" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище cargotModel.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище cargotModel.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="TotalSum" FunctionName="Хранилище cargotModel.TotalSum" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

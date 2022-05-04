@@ -34,20 +34,22 @@ namespace ShakirovTranspComp
 
                 if (authorizingUser != null)
                 {
+                    MainWindow main = new MainWindow();
                     if (authorizingUser.Client != null)
                     {
-                        MainWindow main = new MainWindow();
+                        Manager.mainFrame.Navigate(new MainPage());
                         Manager.currentClient = authorizingUser.Client;
-                        main.Show();
                     }
                     else if (authorizingUser.Admins != null)
                     {
-
+                        Manager.mainFrame.Navigate(new AdminsPage());
                     }
                     else if (authorizingUser.Drivers != null)
                     {
 
                     }
+                    main.Show();
+
                     Manager.AuthWindow.Close();
                 }
                 else MessageBox.Show("Неверные номер или пароль");

@@ -21,7 +21,7 @@ namespace ShakirovTranspComp.OrderClasses
                 {
                     date = d,
                     price = CalculatePrice(),
-                    car = t.StateNum,
+                    car = t.id,
                     Client = c
                 }
             ));

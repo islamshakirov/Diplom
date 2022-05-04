@@ -27,6 +27,7 @@ namespace ShakirovTranspComp
         public int length { get; set; }
         public byte busy { get; set; }
         public int kind { get; set; }
+        public int id { get; set; }
     
         public virtual CarType CarType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
