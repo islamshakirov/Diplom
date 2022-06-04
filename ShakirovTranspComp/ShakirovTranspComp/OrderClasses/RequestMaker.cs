@@ -17,7 +17,7 @@ namespace ShakirovTranspComp.OrderClasses
                 Transport suitableCar = await DataBase.FindSuitCarForCargo(amount, cargo);
                 if (suitableCar != null)
                 {
-                    if (await tranferCreate.InitializeRequestAsync(DateTime.Now, suitableCar, Manager.currentClient) != null)
+                    if (await tranferCreate.InitializeRequestAsync(DateTime.Now, suitableCar, Manager.currentUser.Client) != null)
                     {
                         tranferCreate.FactoryMethod().Request();
                         //MessageBox.Show("Заказ совершен");
@@ -52,7 +52,7 @@ namespace ShakirovTranspComp.OrderClasses
                 Transport suitableCar = await DataBase.FindSuitCarForCargo(3000, cargo);
                 if (suitableCar != null)
                 {
-                    if (await movingCreate.InitializeRequestAsync(DateTime.Now, suitableCar, Manager.currentClient) != null)
+                    if (await movingCreate.InitializeRequestAsync(DateTime.Now, suitableCar, Manager.currentUser.Client) != null)
                     {
                         movingCreate.FactoryMethod().Request();
                         //MessageBox.Show("Заказ совершен");
@@ -84,7 +84,7 @@ namespace ShakirovTranspComp.OrderClasses
                 Transport suitableCar = await DataBase.FindSuitCar(amount, carType);
                 if (suitableCar != null)
                 {
-                    if (await arendCreate.InitializeRequestAsync(DateTime.Now, suitableCar, Manager.currentClient) != null)
+                    if (await arendCreate.InitializeRequestAsync(DateTime.Now, suitableCar, Manager.currentUser.Client) != null)
                     {
                         arendCreate.FactoryMethod().Request();
                         //MessageBox.Show("Аренда совершена");

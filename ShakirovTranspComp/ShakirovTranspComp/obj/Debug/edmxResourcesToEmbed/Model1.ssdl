@@ -51,6 +51,7 @@
     <Property Name="furniture" Type="tinyint" />
     <Property Name="pack" Type="tinyint" />
     <Property Name="driver" Type="int" />
+    <Property Name="isReady" Type="tinyint" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -96,6 +97,7 @@
     <Property Name="loader" Type="smallint" />
     <Property Name="driver" Type="int" />
     <Property Name="cargoType" Type="int" Nullable="false" />
+    <Property Name="isReady" Type="tinyint" />
   </EntityType>
   <EntityType Name="User">
     <Key>

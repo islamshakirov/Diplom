@@ -1,0 +1,141 @@
+﻿<Page x:Class="ShakirovTranspComp.SelectedDriversOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShakirovTranspComp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SelectedDriversOrder"
+      Width="Auto"
+      Height="Auto"
+      VerticalAlignment="Center"
+      HorizontalAlignment="Center"
+      d:Background="Transparent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="1"
+                Grid.Column="0" 
+                BorderBrush="White" 
+                BorderThickness="1" />
+        
+        <Border Grid.Row="1"
+                Grid.Column="1" 
+                BorderBrush="White" 
+                BorderThickness="1" />
+        <Border Grid.Row="1"
+                Grid.Column="2" 
+                BorderBrush="White" 
+                BorderThickness="1" />
+        <Border Grid.Row="2"
+                Grid.Column="1" 
+                BorderBrush="White" 
+                BorderThickness="1" />
+        <Border Grid.Row="2"
+                Grid.Column="0" 
+                BorderBrush="White" 
+                BorderThickness="1" />
+        <Border Grid.Row="2"
+                Grid.Column="2" 
+                BorderBrush="White" 
+                BorderThickness="1" />
+        <Border Grid.Row="3"
+                Grid.ColumnSpan="3"
+                BorderBrush="White" 
+                BorderThickness="1" />
+
+        <TextBlock Name="TypeBox"
+                   TextWrapping="Wrap"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center"
+                   FontSize="35"
+                   Foreground="White"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"/>
+
+        <TextBlock Text="Номер заказа"
+                   FontSize="25"
+                   TextWrapping="Wrap"
+                   Grid.Row="1"
+                   Foreground="White"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Text="Точка отправки"
+                   FontSize="25"
+                   TextWrapping="Wrap"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                    Foreground="White"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Text="Точка прибытия"
+                   FontSize="25"
+                   TextWrapping="Wrap"
+                   Grid.Row="1"
+                   Grid.Column="2"
+                    Foreground="White"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Name="OrderIdBox"
+                    FontSize="25"
+                   TextWrapping="Wrap"
+                   Grid.Row="2"
+                    Foreground="White"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Name="ExportBox"
+                    FontSize="25"
+                   TextWrapping="Wrap"
+                   Grid.Row="2"
+                    Foreground="White"
+                   FontWeight="Bold"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Name="ImportBox"
+                    FontSize="25"
+                   TextWrapping="Wrap"
+                   Grid.Row="2"
+                    Foreground="White"
+                   FontWeight="Bold"
+                   Grid.Column="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <Button Name="FinishButton"
+                Content="Исполнен"
+                FontSize="25"
+                Height="50"
+                Width="250"
+                Background="White"
+                FontWeight="Bold"
+                Grid.Row="3"
+                Grid.ColumnSpan="3"
+                Click="FinishButton_Click"
+                Margin="10"/>
+
+    </Grid>
+</Page>

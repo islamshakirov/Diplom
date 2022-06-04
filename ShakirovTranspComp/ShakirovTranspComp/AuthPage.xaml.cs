@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,8 @@ namespace ShakirovTranspComp
                     if (authorizingUser.Client != null)
                     {
                         Manager.mainFrame.Navigate(new MainPage());
-                        Manager.currentClient = authorizingUser.Client;
+                        Manager.currentUser = authorizingUser;
+                        Manager.currentUser.Client = authorizingUser.Client;
                     }
                     else if (authorizingUser.Admins != null)
                     {
@@ -46,7 +48,9 @@ namespace ShakirovTranspComp
                     }
                     else if (authorizingUser.Drivers != null)
                     {
-
+                        Manager.currentUser = authorizingUser;
+                        Manager.currentUser.Drivers = authorizingUser.Drivers;
+                        Manager.mainFrame.Navigate(new DriverPage());
                     }
                     main.Show();
 
@@ -61,5 +65,7 @@ namespace ShakirovTranspComp
         {
             Manager.mainFrame.Navigate(new RegPage());
         }
+
+       
     }
 }

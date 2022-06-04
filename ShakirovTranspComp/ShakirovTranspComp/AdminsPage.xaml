@@ -10,27 +10,32 @@
       Background="White">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center">
 
-        <Button VerticalAlignment="Center"
+            <Button VerticalAlignment="Center"
                 Name="AutoParkButton"
                 Height="50"
                 FontSize="25"
                 Margin="20"
                 Content="Автопарк"
-                Click="AutoParkButton_Click"/>
+                      Background="#508ca3"
+                    FontWeight="Bold"
+                    Foreground="White"
+                Click="AutoParkButton_Click"
+                Style="{StaticResource RoundButton}"/>
 
-        <Button VerticalAlignment="Center"
+            <Button VerticalAlignment="Center"
                 Name="DriversButton"
                 Height="50"
                 FontSize="25"
                 Margin="20"
                 Content="Водители"
-                Grid.Column="1"
-                Click="DriversButton_Click"/>
-
+                      Background="#508ca3"
+                    FontWeight="Bold"
+                    Foreground="White"
+                Click="DriversButton_Click"
+                Style="{StaticResource RoundButton}"/>
+        </StackPanel>
     </Grid>
 </Page>

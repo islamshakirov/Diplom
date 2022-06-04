@@ -21,6 +21,7 @@ namespace ShakirovTranspComp
         public Nullable<byte> furniture { get; set; }
         public Nullable<byte> pack { get; set; }
         public Nullable<int> driver { get; set; }
+        public Nullable<byte> isReady { get; set; }
     
         public virtual Drivers Drivers { get; set; }
         public virtual Order Order { get; set; }

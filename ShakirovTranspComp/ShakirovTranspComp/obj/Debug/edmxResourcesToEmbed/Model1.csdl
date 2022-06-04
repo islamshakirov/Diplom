@@ -62,6 +62,7 @@
     <Property Name="driver" Type="Int32" />
     <NavigationProperty Name="Drivers" Relationship="Self.FK_Moving_Drivers" FromRole="Moving" ToRole="Drivers" />
     <NavigationProperty Name="Order" Relationship="Self.FK_Moving_Order" FromRole="Moving" ToRole="Order" />
+    <Property Name="isReady" Type="Byte" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -117,6 +118,7 @@
     <NavigationProperty Name="cargoType1" Relationship="Self.FK_Transportation_cargoType" FromRole="Transportation" ToRole="cargoType" />
     <NavigationProperty Name="Drivers" Relationship="Self.FK_Transportation_Drivers" FromRole="Transportation" ToRole="Drivers" />
     <NavigationProperty Name="Order" Relationship="Self.FK_Transportation_Order" FromRole="Transportation" ToRole="Order" />
+    <Property Name="isReady" Type="Byte" />
   </EntityType>
   <EntityType Name="User">
     <Key>

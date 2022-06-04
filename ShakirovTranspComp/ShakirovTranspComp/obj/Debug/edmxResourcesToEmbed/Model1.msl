@@ -50,6 +50,7 @@
     <EntitySetMapping Name="Moving">
       <EntityTypeMapping TypeName="cargotModel.Moving">
         <MappingFragment StoreEntitySet="Moving">
+          <ScalarProperty Name="isReady" ColumnName="isReady" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="import" ColumnName="import" />
           <ScalarProperty Name="export" ColumnName="export" />
@@ -99,6 +100,7 @@
     <EntitySetMapping Name="Transportation">
       <EntityTypeMapping TypeName="cargotModel.Transportation">
         <MappingFragment StoreEntitySet="Transportation">
+          <ScalarProperty Name="isReady" ColumnName="isReady" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="import" ColumnName="import" />
           <ScalarProperty Name="export" ColumnName="export" />

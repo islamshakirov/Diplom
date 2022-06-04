@@ -21,6 +21,7 @@ namespace ShakirovTranspComp
         public Nullable<short> loader { get; set; }
         public Nullable<int> driver { get; set; }
         public int cargoType { get; set; }
+        public Nullable<byte> isReady { get; set; }
     
         public virtual cargoType cargoType1 { get; set; }
         public virtual Drivers Drivers { get; set; }

@@ -43,7 +43,7 @@ namespace ShakirovTranspComp
                 FirstOrDefault()
              );
         }
-
+        
         public static async Task<Transport> FindSuitCar(int minAmount, CarType type)
         {
             return await Task.Run(
@@ -95,6 +95,7 @@ namespace ShakirovTranspComp
         public static async Task<List<Transport>> GetAutoList()
         {
             Task<List<Transport>> t1 = new Task<List<Transport>>(() => GetContext().Transport.ToList());
+            
             List<Transport> collection = new List<Transport>();
             try
             {
@@ -356,6 +357,115 @@ namespace ShakirovTranspComp
             }
             else MessageBox.Show("Номер телефона уже зарегистрирован");
 
+        }
+
+        private static Moving FindCurrentDriversMoving()
+        {
+            return GetContext().Moving.Where(mo => mo.driver == Manager.currentUser.Drivers.id && mo.isReady == 0).FirstOrDefault();
+        }
+
+        private static Transportation FindCurrentDriversTransportation()
+        {
+            return GetContext().Transportation.Where(to => to.driver == Manager.currentUser.Drivers.id && to.isReady == 0).FirstOrDefault();
+        }
+        public static Order FindCurrentDriversOrder()
+        {
+            Order currentOrder = new Order();
+
+            currentOrder.Transportation = FindCurrentDriversTransportation();
+            currentOrder.Moving = FindCurrentDriversMoving();
+
+            return currentOrder;
+        }
+        public static List<Transportation> FreeTranportation()
+        {
+            return GetContext().Transportation.Where(f => f.driver == null).ToList();
+        }
+
+        public static List<Moving> FreeMoving()
+        {
+            return GetContext().Moving.Where(f => f.driver == null).ToList();
+        }
+        public static List<Order> GetFreeOrders()
+        {
+            List<Order> freeOrders = new List<Order>();
+
+            foreach (Transportation tr in FreeTranportation())
+            {
+                freeOrders.Add(tr.Order);
+            }
+            foreach (Moving m in FreeMoving())
+            {
+                freeOrders.Add(m.Order);
+            }
+
+            return freeOrders;
+        }
+
+        public static bool FinishOrder(Order onFinish)
+        {
+            if (onFinish.Transportation != null)
+            {
+                try
+                {
+                    GetContext().Transportation.Attach(onFinish.Transportation);
+                    onFinish.Transportation.isReady = 1;
+                    SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else if (onFinish.Moving != null)
+            {
+                try
+                {
+                    GetContext().Moving.Attach(onFinish.Moving);
+                    onFinish.Moving.isReady = 1;
+                    SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else return false;
+        }
+
+        public static bool AcceptOrder(Order onAccept)
+        {
+            if (onAccept.Transportation != null)
+            {
+                try
+                {
+                    GetContext().Transportation.Attach(onAccept.Transportation);
+                    onAccept.Transportation.driver = Manager.currentUser.Drivers.id;
+                    SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else if (onAccept.Moving != null)
+            {
+                try
+                {
+                    GetContext().Moving.Attach(onAccept.Moving);
+                    onAccept.Moving.driver = Manager.currentUser.Drivers.id;
+                    SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else return false;
         }
     }
 }

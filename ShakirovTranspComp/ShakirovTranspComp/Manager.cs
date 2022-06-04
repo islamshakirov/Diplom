@@ -9,6 +9,6 @@ namespace ShakirovTranspComp
         public static Window AuthWindow { get; set; }
         public static Window MainWindow { get; set; }
         public static Frame mainFrame { get; set; }
-        public static Client currentClient { get; set; }
+        public static User currentUser { get; set; }
     }
 }

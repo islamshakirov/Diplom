@@ -85,3 +85,9 @@ C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Deb
 C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\DriversManagment.g.cs
 C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\AdminsPage.baml
 C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\DriversManagment.baml
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\DriverPage.g.cs
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\DriverPage.baml
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\FreeOrders.g.cs
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\SelectedDriversOrder.g.cs
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\FreeOrders.baml
+C:\Users\IRBP\Desktop\Диплом\ShakirovTranspComp\ShakirovTranspComp\obj\Debug\SelectedDriversOrder.baml

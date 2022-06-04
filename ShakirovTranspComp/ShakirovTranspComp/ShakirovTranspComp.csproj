@@ -99,11 +99,17 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="DriverPage.xaml.cs">
+      <DependentUpon>DriverPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Drivers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DriversManagment.xaml.cs">
       <DependentUpon>DriversManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FreeOrders.xaml.cs">
+      <DependentUpon>FreeOrders.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Model1.Context.cs">
@@ -141,6 +147,9 @@
     <Compile Include="OrderClasses\TransportationRequestCreator.cs" />
     <Compile Include="RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectedDriversOrder.xaml.cs">
+      <DependentUpon>SelectedDriversOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -186,7 +195,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DriverPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DriversManagment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FreeOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +235,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectedDriversOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
